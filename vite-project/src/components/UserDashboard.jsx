@@ -179,7 +179,7 @@ const UserDashboard = () => {
           selectsRange
           inline={false} 
           dateFormat="yyyy-MM-dd"
-          placeholderText="Select Date Range"
+          placeholderText="Date"
           openToDate={filters.dateRange?.startDate}
         />
       </div>

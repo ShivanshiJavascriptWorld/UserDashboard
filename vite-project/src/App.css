@@ -154,6 +154,7 @@ border-radius: 4px;
   margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  background: #fff;
 }
 
 .react-datepicker__input-container input {
@@ -259,6 +260,7 @@ th {
   justify-content: center;
 align-items: center;
   padding: 15px;
+  gap:15px;
 }
 
 .pagination button {
@@ -277,4 +279,14 @@ align-items: center;
 .pagination button.active {
   background: #007bff;
   color: white;
+}
+.pagination span{
+  color:#000;
+}
+.pagination select{
+  background: #fff;
+  border-radius: 10px;
+  color: #000;
+  font-size: 18px;
+  padding: 15px;
 }
