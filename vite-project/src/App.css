@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 40px;
+
+
+}
+
+.container {
+  width: 90vw;
+  
+  margin: auto;
+  background-color: #fafafa;
+
+  padding: 40px;
+}
+
+.header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.header h2{
+  color:#1f1f1f;
+}
+.header p{
+  color: #8b8b8b;
+}
+
+.user-summary {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.card {
+  height:120px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  padding: 20px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap:20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+}
+
+.card-icon {
+  font-size: 24px;
+  background: #ebfdf6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.card-info {
+  background: #fff;
+
+
+}
+
+.card-info h2 {
+color:#1f1f1f;
+font-size: 48px;
+background: #fff;
+
+}
+
+.card-info h5 {
+  color:#898989;
+  /* padding-block-end: 4px; */
+  background: #fff;
+
+
+}
+.link{
+  background: #fff;
+  position: absolute;
+  top:12px;
+  right:40px;
+
+}
+.func{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 330px; 
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  background: #fff;
+  padding:2px 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  margin-top: 4px;
+  color:#898989;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  color:#898989;
+
+  flex: 1;
+  font-size: 16px;
+  background: transparent;
+}
+
+
+.filter-options {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-options select {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dadada;
+    color:#898989;
+    width:130px;
+border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.date-range-input input {
+  width: 200px;
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.react-datepicker__input-container input {
+  cursor: pointer;
+}
+
+
+.table-container {
+  width: 100%;
+  color:#898989;
+  border-radius: 15px;
+  background: #fff;
+  border: 1px solid #dadada;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+
+
+}
+.inner-table{
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+border: none;
+outline: none;
+}
+th{
+  text-align: left;
+  padding: 10px;
+  color: #838383;
+
+}
+ td {
+  padding: 20px;
+
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+
+}
+
+
+th {
+  cursor: pointer;
+
+}
+
+
+
+.status {
+  padding: 8px 40px;
+  border-radius: 5px;
+  /* font-weight: bold; */
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.active {
+  color: #10dd85;
+  background: #ebfdf5;
+  border:1px solid #10dd85;
+}
+
+.blocked {
+  color: #f45569;
+  background: #fef2f2;
+  border:1px solid #f45569;
+
+}
+
+.inactive {
+  color: #4297ff;
+  background: #ecf5ff;
+  border:1px solid #4297ff;
+
+}
+.action-btns{
+  display: flex;
+  align-items: center;
+  gap:10px;
+  cursor: pointer;
+  
+
+  /* justify-content: flex-start; */
+}
+.action-btn{
+  padding: 5px 10px;
+}
+
+
+.delete { color: #f45569;
+  background: #fef2f2;
+  border:1px solid #f45569; }
+.approve {  color: #10dd85;
+  background: #ebfdf5;
+  border:1px solid #10dd85;}
+.info { color: #dadada; background:#f4f4f4;border:1px solid #dadada; }
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+align-items: center;
+  padding: 15px;
+}
+
+.pagination button {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 0 3px;
+  background: white;
+  color:#000;
+  cursor: pointer;
+}
+.pagination button:disabled{
+  opacity: 0.5;
+  cursor: no-drop;
+}
+
+.pagination button.active {
+  background: #007bff;
+  color: white;
+}
