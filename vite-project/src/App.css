@@ -206,8 +206,11 @@ th {
 
 
 .status {
+  /* padding: 8px 40px; */
   padding: 8px 40px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
   /* font-weight: bold; */
   text-align: center;
   text-transform: capitalize;
