@@ -59,6 +59,7 @@ const UserDashboard = () => {
   };
 
   const handleStatusUpdate = (id, newStatus) => {
+
     setData(prevData => prevData.map(item => 
       item.id === id ? { ...item, about: { ...item.about, status: newStatus } } : item
     ));
@@ -110,7 +111,8 @@ const UserDashboard = () => {
 
   const totalUsers = allRecords.length;
   const blockedUsers = allRecords.filter(user => user.about.status === "BLOCKED").length;
-  const inactiveUsers = allRecords.filter(user => user.about.status !== "ACTIVE").length;
+  const activeUsers=allRecords.filter(user=>user.about.status==="ACTIVE").length;
+//   const inactiveUsers = allRecords.filter(user => user.about.status !== "ACTIVE" && user.about.status!=="BLOCKED").length;
 
   return (
     <div className="container">
@@ -135,7 +137,7 @@ const UserDashboard = () => {
           <div className="card-icon"><PersonAddIcon style={{ color: "#00db7e", fontSize: "45px", background: "#ebfdf6" }} /></div>
           <div className="card-info">
             <h5>Active Users</h5>
-            <h2>{totalUsers - inactiveUsers}</h2>
+            <h2>{activeUsers}</h2>
           </div>
           <div className="link"><LaunchIcon style={{ color: "#898989", background: "#fff", fontSize: "18px" }} /></div>
         </div>
@@ -143,7 +145,7 @@ const UserDashboard = () => {
           <div className="card-icon"><PersonRemoveIcon style={{ color: "#00db7e", fontSize: "45px", background: "#ebfdf6" }} /></div>
           <div className="card-info">
             <h5>Inactive Users</h5>
-            <h2>{((inactiveUsers / totalUsers) * 100)}%</h2>
+            <h2>{(((totalUsers-activeUsers-blockedUsers) / totalUsers) * 100)}%</h2>
           </div>
           <div className="link"><LaunchIcon style={{ color: "#898989", background: "#fff", fontSize: "18px" }} /></div>
         </div>
@@ -163,9 +165,9 @@ const UserDashboard = () => {
         </div>
         <div className="filter-options">
           <select name="status" onChange={handleFilterChange}>
-            <option>Status</option>
+            <option value="">Status</option>
             <option value="ACTIVE">Active</option>
-            <option value="INACTIVE">Inactive</option>
+            <option value="INVITED">Inactive</option>
             <option value="BLOCKED">Blocked</option>
           </select>
         
