@@ -15,6 +15,7 @@ import userList from "../assets/extended_demo_data_1.json";
 
 const UserDashboard = () => {
   const allRecords = userList;
+  const [allData, setAllData] = useState(allRecords);
   const [data, setData] = useState(allRecords.slice(0, 5));
   const [sortConfig, setSortConfig] = useState({ key: "", direction: "asc" });
   const [filters, setFilters] = useState({ status: "", name: "", dateRange: null });
@@ -59,7 +60,11 @@ const UserDashboard = () => {
   };
 
   const handleStatusUpdate = (id, newStatus) => {
-
+    setAllData(prevData =>
+        prevData.map(item =>
+          item.id === id ? { ...item, about: { ...item.about, status: newStatus } } : item
+        )
+      );
     setData(prevData => prevData.map(item => 
       item.id === id ? { ...item, about: { ...item.about, status: newStatus } } : item
     ));
@@ -109,9 +114,9 @@ const UserDashboard = () => {
 
   const currentRecords = sortedData.slice((currentPage - 1) * recordsPerPage, currentPage * recordsPerPage);
 
-  const totalUsers = allRecords.length;
-  const blockedUsers = allRecords.filter(user => user.about.status === "BLOCKED").length;
-  const activeUsers=allRecords.filter(user=>user.about.status==="ACTIVE").length;
+  const totalUsers = allData.length;
+  const blockedUsers = allData.filter(user => user.about.status === "BLOCKED").length;
+  const activeUsers=allData.filter(user=>user.about.status==="ACTIVE").length;
 //   const inactiveUsers = allRecords.filter(user => user.about.status !== "ACTIVE" && user.about.status!=="BLOCKED").length;
 
   return (
